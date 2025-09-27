@@ -1,0 +1,314 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "scientificName": "Jasminum officinale",
+      "englishName": "Jasmine",
+      "arabicName": "ياسمين",
+      "family": "Oleaceae",
+      "bloomSeason": "April–June (Spring)",
+      "keyFeature": "Renowned for its intensely fragrant, white, star-shaped flowers that bloom at night. It is a primary source of jasmine oil used in perfumery and aromatherapy worldwide.",
+      "image": "/assets/Flowers/Jasmine.png"
+    },
+    {
+      "id": 2,
+      "scientificName": "Aloe vera",
+      "englishName": "Aloe Vera",
+      "arabicName": "صبار",
+      "family": "Asphodelaceae",
+      "bloomSeason": "June–August (Summer)",
+      "keyFeature": "A succulent plant with thick, fleshy, green leaves filled with a clear, gel-like substance. The gel is widely used for its soothing and healing properties for skin ailments, including burns and cuts.",
+      "image": "/assets/Flowers/Aloe Vera.png"
+    },
+    {
+      "id": 3,
+      "scientificName": "Papaver rhoeas",
+      "englishName": "Poppy",
+      "arabicName": "خشخاش",
+      "family": "Papaveraceae",
+      "bloomSeason": "March–May (Spring)",
+      "keyFeature": "Recognizable by its vibrant, delicate red petals with a distinctive black or dark purple center. It is a common wildflower and a symbol of remembrance.",
+      "image": "/assets/Flowers/Poppy.png"
+    },
+    {
+      "id": 4,
+      "scientificName": "Hibiscus sabdariffa",
+      "englishName": "Hibiscus",
+      "arabicName": "كركديه",
+      "family": "Malvaceae",
+      "bloomSeason": "July–September (Summer)",
+      "keyFeature": "Produces striking red, funnel-shaped flowers. The fleshy red calyces are dried and used to make a popular, tart-tasting herbal tea that is rich in Vitamin C.",
+      "image": "/assets/Flowers/Henna.png"
+    },
+    {
+      "id": 5,
+      "scientificName": "Olea europaea",
+      "englishName": "Olive Tree",
+      "arabicName": "زيتون",
+      "family": "Oleaceae",
+      "bloomSeason": "April–May (Spring)",
+      "keyFeature": "An ancient, evergreen tree famous for its fruit, which is pressed to produce olive oil. It is a powerful cultural symbol of peace, wisdom, and prosperity throughout the Mediterranean region.",
+      "image": "/assets/Flowers/Olive Tree.png"
+    },
+    {
+      "id": 6,
+      "scientificName": "Phoenix dactylifera",
+      "englishName": "Date Palm",
+      "arabicName": "نخيل",
+      "family": "Arecaceae",
+      "bloomSeason": "February–April (Spring)",
+      "keyFeature": "A tall, iconic palm tree that produces clusters of sweet, nutritious fruits called dates. It has been a staple food and a symbol of life and hospitality in arid regions for millennia.",
+      "image": "/assets/Flowers/Date Palm.png"
+    },
+    {
+      "id": 7,
+      "scientificName": "Ficus carica",
+      "englishName": "Fig",
+      "arabicName": "تين",
+      "family": "Moraceae",
+      "bloomSeason": "May–June (Late Spring)",
+      "keyFeature": "A small tree known for its unique pear-shaped fruits with sweet, soft, red flesh. The fruits and leaves have been used for culinary and medicinal purposes since ancient times.",
+      "image": "/assets/Flowers/Fig.png"
+    },
+    {
+      "id": 8,
+      "scientificName": "Ceratonia siliqua",
+      "englishName": "Carob Tree",
+      "arabicName": "خروب",
+      "family": "Fabaceae",
+      "bloomSeason": "April–May (Spring)",
+      "keyFeature": "Produces long, dark brown pods that are sweet and edible. The pods are often ground into a powder used as a caffeine-free chocolate substitute and have traditional medicinal uses.",
+      "image": "/assets/Flowers/Carob Tree.png"
+    },
+    {
+      "id": 9,
+      "scientificName": "Thymus vulgaris",
+      "englishName": "Thyme",
+      "arabicName": "زعتر",
+      "family": "Lamiaceae",
+      "bloomSeason": "March–May (Spring)",
+      "keyFeature": "A highly aromatic herb with small, gray-green leaves and tiny purple flowers. It is a fundamental culinary herb and is also valued for its antiseptic and preservative qualities.",
+      "image": "/assets/Flowers/Thyme.png"
+    },
+    {
+      "id": 10,
+      "scientificName": "Rosmarinus officinalis",
+      "englishName": "Rosemary",
+      "arabicName": "إكليل الجبل",
+      "family": "Lamiaceae",
+      "bloomSeason": "April–June (Spring)",
+      "keyFeature": "An evergreen shrub with fragrant, needle-like leaves and pale blue flowers. It is used extensively in cooking, for its aromatic oil, and is a symbol of remembrance.",
+      "image": "/assets/Flowers/Rosemary.png"
+    },
+    {
+      "id": 11,
+      "scientificName": "Mentha spicata",
+      "englishName": "Mint",
+      "arabicName": "نعناع",
+      "family": "Lamiaceae",
+      "bloomSeason": "March–May (Spring)",
+      "keyFeature": "A fast-spreading herb with a strong, refreshing aroma and flavor. Its leaves are used in teas, cooking, and medicines to aid digestion and provide a cooling sensation.",
+      "image": "/assets/Flowers/Mint.png"
+    },
+    {
+      "id": 12,
+      "scientificName": "Anemone coronaria",
+      "englishName": "Anemone",
+      "arabicName": "شقائق النعمان",
+      "family": "Ranunculaceae",
+      "bloomSeason": "February–April (Spring)",
+      "keyFeature": "A vibrant wildflower with striking red or purple petals and a dark center. It is a celebrated symbol of beauty and is often associated with the arrival of spring.",
+      "image": "/assets/Flowers/Anemone.png"
+    },
+    {
+      "id": 13,
+      "scientificName": "Acacia nilotica",
+      "englishName": "Acacia",
+      "arabicName": "طلح",
+      "family": "Fabaceae",
+      "bloomSeason": "June–September (Summer)",
+      "keyFeature": "A hardy, thorny tree well-adapted to arid climates. It produces fragrant, yellow, puffball-like flowers and its gum (gum arabic) has economic importance.",
+      "image": "/assets/Flowers/Purslane.png"
+    },
+    {
+      "id": 14,
+      "scientificName": "Nymphaea lotus",
+      "englishName": "Lotus",
+      "arabicName": "لوتس",
+      "family": "Nymphaeaceae",
+      "bloomSeason": "May–August (Summer)",
+      "keyFeature": "An aquatic plant with stunning white flowers that float on the water's surface. It held profound religious and cultural significance in ancient Egypt, symbolizing creation and rebirth.",
+      "image": "/assets/Flowers/Egyptian Lotus.png"
+    },
+    {
+      "id": 15,
+      "scientificName": "Matricaria chamomilla",
+      "englishName": "Chamomile",
+      "arabicName": "بابونج",
+      "family": "Asteraceae",
+      "bloomSeason": "March–May (Spring)",
+      "keyFeature": "A daisy-like herb with small white petals surrounding a bright yellow center. Its dried flowers are used to make a gentle, calming herbal tea that aids sleep and digestion.",
+      "image": "/assets/Flowers/Chamomile.png"
+    },
+    {
+      "id": 16,
+      "scientificName": "Tamarindus indica",
+      "englishName": "Tamarind",
+      "arabicName": "تمر هندي",
+      "family": "Fabaceae",
+      "bloomSeason": "April–June (Spring)",
+      "keyFeature": "A large tree producing brown, pod-like fruits with a sweet-and-sour pulp inside. The pulp is a popular ingredient in cuisines worldwide and has various medicinal applications.",
+      "image": "/assets/Flowers/Tamarind.png"
+    },
+    {
+      "id": 17,
+      "scientificName": "Salvia officinalis",
+      "englishName": "Sage",
+      "arabicName": "مريمية",
+      "family": "Lamiaceae",
+      "bloomSeason": "April–June (Spring)",
+      "keyFeature": "A woody-stemmed herb with soft, gray-green leaves. It has a strong aroma and is used as a culinary seasoning, as well as in traditional medicine for its purported healing properties.",
+      "image": "/assets/Flowers/Sage.png"
+    },
+    {
+      "id": 18,
+      "scientificName": "Cupressus sempervirens",
+      "englishName": "Cypress",
+      "arabicName": "سرو",
+      "family": "Cupressaceae",
+      "bloomSeason": "March–April (Spring)",
+      "keyFeature": "A tall, slender, evergreen conifer with a distinctive dark green, columnar shape. It is commonly used as an ornamental tree and its durable wood is valued for timber.",
+      "image": "/assets/Flowers/Cypress.png"
+    },
+    {
+      "id": 19,
+      "scientificName": "Origanum majorana",
+      "englishName": "Marjoram",
+      "arabicName": "بردقوش",
+      "family": "Lamiaceae",
+      "bloomSeason": "April–June (Spring)",
+      "keyFeature": "A tender aromatic herb with sweet, citrusy undertones. It is used in cooking for its delicate flavor and in traditional medicine as a tea to soothe nerves and aid digestion.",
+      "image": "/assets/Flowers/Marjoram.png"
+    },
+    {
+      "id": 20,
+      "scientificName": "Ocimum basilicum",
+      "englishName": "Basil",
+      "arabicName": "ريحان",
+      "family": "Lamiaceae",
+      "bloomSeason": "May–July (Summer)",
+      "keyFeature": "A highly fragrant herb with bright green leaves. It is a cornerstone of many cuisines, particularly Mediterranean, and is also used for its essential oils and medicinal benefits.",
+      "image": "/assets/Flowers/Basil.png"
+    },
+    {
+      "id": 21,
+      "scientificName": "Sesbania sesban",
+      "englishName": "Egyptian Riverhemp",
+      "arabicName": "سنط النيل",
+      "family": "Fabaceae",
+      "bloomSeason": "June–September (Summer)",
+      "keyFeature": "A fast-growing shrub or small tree with clusters of yellow flowers. It is valued in agriculture for its ability to fix nitrogen in the soil, improving fertility for other crops.",
+      "image": "/assets/Flowers/Egyptian Riverhemp.png"
+    },
+    {
+      "id": 22,
+      "scientificName": "Amaranthus caudatus",
+      "englishName": "Love-Lies-Bleeding",
+      "arabicName": "قطيفة",
+      "family": "Amaranthaceae",
+      "bloomSeason": "June–August (Summer)",
+      "keyFeature": "An ornamental plant known for its unusual, long, drooping red flower tassels. Both its seeds and leaves are edible and highly nutritious.",
+      "image": "/assets/Flowers/Love-Lies-Bleeding.png"
+    },
+    {
+      "id": 23,
+      "scientificName": "Portulaca oleracea",
+      "englishName": "Purslane",
+      "arabicName": "رجلة",
+      "family": "Portulacaceae",
+      "bloomSeason": "May–September (Summer)",
+      "keyFeature": "A succulent ground-plant with fleshy, green leaves and a slightly tangy flavor. It is a nutritious leafy vegetable, rich in omega-3 fatty acids, and used in salads and traditional remedies.",
+      "image": "/assets/Flowers/Purslane.png"
+    },
+    {
+      "id": 24,
+      "scientificName": "Heliotropium curassavicum",
+      "englishName": "Seaside Heliotrope",
+      "arabicName": "هليوتروب",
+      "family": "Boraginaceae",
+      "bloomSeason": "June–October (Summer)",
+      "keyFeature": "A low-growing, fleshy plant with small clusters of white flowers that have a subtle fragrance. It is highly tolerant of salty and coastal conditions.",
+      "image": "/assets/Flowers/Seaside Heliotrope.png"
+    },
+    {
+      "id": 25,
+      "scientificName": "Ziziphus spina-christi",
+      "englishName": "Christ’s Thorn Jujube",
+      "arabicName": "سدر",
+      "family": "Rhamnaceae",
+      "bloomSeason": "June–August (Summer)",
+      "keyFeature": "A thorny evergreen tree that produces small, sweet, date-like fruits. It has significant cultural and religious history and its leaves are used for various purposes.",
+      "image": "/assets/Flowers/Christ’s Thorn Jujube.png"
+    },
+    {
+      "id": 26,
+      "scientificName": "Calendula officinalis",
+      "englishName": "Pot Marigold",
+      "arabicName": "قطيفة طبية",
+      "family": "Asteraceae",
+      "bloomSeason": "December–February (Winter)",
+      "keyFeature": "Known for its bright orange or yellow flowers. The petals are edible and are used to make healing salves, skin creams, and a soothing herbal tea.",
+      "image": "/assets/Flowers/Pot Marigold.png"
+    },
+    {
+      "id": 27,
+      "scientificName": "Narcissus tazetta",
+      "englishName": "Paperwhite Narcissus",
+      "arabicName": "نرجس",
+      "family": "Amaryllidaceae",
+      "bloomSeason": "December–February (Winter)",
+      "keyFeature": "A bulbous plant that produces clusters of highly fragrant, pure white flowers. It is a popular ornamental plant and a symbol of good fortune and beauty.",
+      "image": "/assets/Flowers/Paperwhite Narcissus.png"
+    },
+    {
+      "id": 28,
+      "scientificName": "Chrysanthemum coronarium",
+      "englishName": "Garland Daisy",
+      "arabicName": "أقحوان",
+      "family": "Asteraceae",
+      "bloomSeason": "November–February (Winter)",
+      "keyFeature": "A cheerful plant with yellow and white daisy-like flowers. Both the flowers and leaves are edible and are commonly used in salads and stir-fries in various cuisines.",
+      "image": "/assets/Flowers/Garland Daisy.png"
+    },
+    {
+      "id": 29,
+      "scientificName": "Crocus sativus",
+      "englishName": "Saffron Crocus",
+      "arabicName": "زعفران",
+      "family": "Iridaceae",
+      "bloomSeason": "October–November (Autumn)",
+      "keyFeature": "A fall-blooming crocus with beautiful purple flowers. The valuable spice saffron consists of the hand-picked red stigmas from each flower, making it the world's most expensive spice by weight.",
+      "image": "/assets/Flowers/Saffron Crocus.png"
+    },
+    {
+      "id": 30,
+      "scientificName": "Tagetes erecta",
+      "englishName": "African Marigold",
+      "arabicName": "قطيفة صفراء",
+      "family": "Asteraceae",
+      "bloomSeason": "September–November (Autumn)",
+      "keyFeature": "Produces large, pom-pom-like flowers in vibrant shades of yellow and orange. It is often planted in gardens to naturally repel pests and nematodes from the soil.",
+      "image": "/assets/Flowers/African Marigold.png"
+    },
+    {
+      "id": 31,
+      "scientificName": "Cyperus papyrus",
+      "englishName": "Papyrus",
+      "arabicName": "بردي",
+      "family": "Cyperaceae",
+      "bloomSeason": "Year-round (All Seasons)",
+      "keyFeature": "A tall, aquatic sedge known for its tall, green stems topped with an umbrella-like cluster of fine leaves. It was used by the ancient Egyptians to make a early form of paper.",
+      "image": "/assets/Flowers/Papyrus.png"
+    }
+  ]
+}
