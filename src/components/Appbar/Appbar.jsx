@@ -9,10 +9,10 @@ export default function Appbar() {
 
   return (
     <div className="flex justify-between items-center p-2 bg-[rgba(255,255,255,0.99)]">
-      {/* Logo */}
+
       <img src={logo} alt="BloomSphere" className="w-28" />
 
-      {/* Navigation list (hidden on mobile) */}
+      {/* Navigation hidden on mobile */}
       <ul className="hidden md:flex space-x-6">
         <li>
           <NavLink

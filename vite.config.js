@@ -7,4 +7,13 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'globe-three':['three' , 'globe.gl'],
+        },
+      },
+    },
+  }
 })

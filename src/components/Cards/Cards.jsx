@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion as _motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import './Cards.css'
+import './Cards.css';
 
 export default function Explore() {
   const [plants, setPlants] = useState([]);
@@ -28,9 +28,7 @@ export default function Explore() {
       : plants.filter((p) => {
           const seasonName = p.bloomSeason.toLowerCase();
           if (season.toLowerCase() === "autumn") {
-            return (
-              seasonName.includes("autumn") || seasonName.includes("fall")
-            );
+            return seasonName.includes("autumn") || seasonName.includes("fall");
           }
           return seasonName.includes(season.toLowerCase());
         });
@@ -92,6 +90,7 @@ export default function Explore() {
                   src={plant.image}
                   alt={plant.englishName}
                   className="max-h-full object-contain"
+                  loading="lazy"
                 />
               </div>
             )}
@@ -108,7 +107,7 @@ export default function Explore() {
               <p className="text-xs text-gray-600 mt-1 flex-grow">
                 {plant.keyFeature}
               </p>
-              <button 
+              <button
                 className='text-[#E2758B] cursor-pointer hover:text-[#884653] underline my-1 text-left'
                 onClick={() => handleDetailsClick(plant)}
               >
@@ -136,50 +135,37 @@ export default function Explore() {
                   src={selectedPlant.image}
                   alt={selectedPlant.englishName}
                   className="max-h-full object-contain"
+                  loading="lazy"
                 />
               </div>
             )}
 
             {/* Content Section */}
             <div className="flex flex-col flex-grow p-5">
-              {/* Header */}
               <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-lg font-bold text-[#3E2723]">
-                      {selectedPlant.englishName}
-                    </h2>
-                    <h3 className="text-xs text-gray-500">
-                      {selectedPlant.arabicName}
-                    </h3>
+                <h2 className="text-lg font-bold text-[#3E2723]">
+                  {selectedPlant.englishName}
+                </h2>
+                <h3 className="text-xs text-gray-500">
+                  {selectedPlant.arabicName}
+                </h3>
               </div>
 
-              {/* Plant Details */}
               <div className="space-y-2">
-                <div>
-                  <p className="text-xs text-gray-500">
-                    <span className="font-semibold">Scientific Name:</span> {selectedPlant.scientificName}
-                  </p>
-                </div>
-                
-                <div>
-                  <p className="text-xs text-gray-500">
-                    <span className="font-semibold">Family:</span> {selectedPlant.family}
-                  </p>
-                </div>
-                
-                <div>
-                  <p className="text-xs text-gray-500">
-                    <span className="font-semibold">Bloom Season:</span> {selectedPlant.bloomSeason}
-                  </p>
-                </div>
-                
-                <div className="mt-3">
-                  <p className="text-xs text-gray-600">
-                    <span className="font-semibold text-[#3E2723]">Key Feature:</span> {selectedPlant.keyFeature}
-                  </p>
-                </div>
+                <p className="text-xs text-gray-500">
+                  <span className="font-semibold">Scientific Name:</span> {selectedPlant.scientificName}
+                </p>
+                <p className="text-xs text-gray-500">
+                  <span className="font-semibold">Family:</span> {selectedPlant.family}
+                </p>
+                <p className="text-xs text-gray-500">
+                  <span className="font-semibold">Bloom Season:</span> {selectedPlant.bloomSeason}
+                </p>
+                <p className="text-xs text-gray-600 mt-3">
+                  <span className="font-semibold text-[#3E2723]">Key Feature:</span> {selectedPlant.keyFeature}
+                </p>
               </div>
 
-              {/* Close Button */}
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeModal}

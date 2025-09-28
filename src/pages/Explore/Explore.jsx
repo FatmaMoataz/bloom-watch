@@ -41,7 +41,6 @@ export default function Explore() {
         Select a season or search for a flower to explore Egypt’s blooms.
       </p>
 
-      {/* Search bar */}
       <div className="flex justify-center mb-6">
         <div className="relative w-80">
           <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#A6A139] text-lg" />
@@ -55,7 +54,6 @@ export default function Explore() {
         </div>
       </div>
 
-      {/* NavTabs */}
       <div className="flex justify-center mb-6 space-x-4">
         {tabs.map((tab) => (
           <button
@@ -72,7 +70,6 @@ export default function Explore() {
         ))}
       </div>
 
-      {/* All Plants (Filtered) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-36 lg:grid-cols-4 gap-6 p-6">
         {seasonPlants.length > 0 ? (
           seasonPlants.map((plant, i) => (
@@ -85,7 +82,6 @@ export default function Explore() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
             >
-              {/* Image Box */}
               {plant.image && (
                 <div className="w-full h-52 bg-[#FBEAEE] flex items-center justify-center">
                   <img
@@ -96,21 +92,14 @@ export default function Explore() {
                 </div>
               )}
 
-              {/* Content */}
               <div className="flex flex-col flex-grow p-5">
                 <div className="flex justify-between items-center">
-                  <h2 className="text-lg font-bold text-[#3E2723]">
-                    {plant.englishName}
-                  </h2>
-                  <h3 className="text-xs text-gray-500 mb-1">
-                    {plant.arabicName}
-                  </h3>
+                  <h2 className="text-lg font-bold text-[#3E2723]">{plant.englishName}</h2>
+                  <h3 className="text-xs text-gray-500 mb-1">{plant.arabicName}</h3>
                 </div>
-<p className="text-xs text-gray-500 my-1">Scientific Name: {plant.scientificName}</p>
-<p className="text-xs text-gray-500 my-1">Family: {plant.family}</p>
-                <p className="text-xs text-gray-600 mt-1 flex-grow">
-                  {plant.keyFeature}
-                </p>              
+                <p className="text-xs text-gray-500 my-1">Scientific Name: {plant.scientificName}</p>
+                <p className="text-xs text-gray-500 my-1">Family: {plant.family}</p>
+                <p className="text-xs text-gray-600 mt-1 flex-grow">{plant.keyFeature}</p>              
               </div>
             </_motion.div>
           ))

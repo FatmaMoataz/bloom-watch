@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect, Suspense } from "react";
 import { AnimatePresence, motion as _motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import earth from "../../assets/images/earth.png";
-import GlobalSphere from "../GlobalSphere/GlobalSphere";
 import "./Header.css";
+import Loader from "../Loader/Loader";
+
+// Lazy load GlobalSphere
+const GlobalSphere = Suspense ? React.lazy(() => import("../GlobalSphere/GlobalSphere")) : null;
 
 export default function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +19,7 @@ export default function Header() {
   return (
     <>
       <div className="flex items-center md:flex-row md:justify-between sm:flex-col-reverse sm:text-center md:text-left">
-        {/* Caption with Framer Motion animation */}
+        {/* Caption */}
         <_motion.div
           className="caption mb-7 md:ms-40 w-40"
           initial={{ x: -100, opacity: 0 }}
@@ -38,8 +41,7 @@ export default function Header() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Flowers tell the story of every season. Learn, explore, and play your
-            way through Egypt’s unique floral world.
+            Flowers tell the story of every season. Learn, explore, and play your way through Egypt’s unique floral world.
           </_motion.p>
 
           <_motion.div
@@ -57,17 +59,18 @@ export default function Header() {
           </_motion.div>
         </_motion.div>
 
-        {/* Earth image (still with AOS only) */}
+        {/* Earth image */}
         <img
           src={earth}
           className="w-80 sm:rotate-90 md:rotate-0 cursor-pointer"
           alt="earth"
+          loading="lazy"
           onClick={() => setShowModal(true)}
           data-aos="zoom-in"
         />
       </div>
 
-      {/* Modal with framer-motion */}
+      {/* Modal */}
       <AnimatePresence>
         {showModal && (
           <_motion.div
@@ -83,7 +86,6 @@ export default function Header() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Close button */}
               <button
                 onClick={() => setShowModal(false)}
                 className="absolute cursor-pointer top-4 right-4 bg-[#E2758B] text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-[#c75a73] transition z-50 pointer-events-auto"
@@ -91,9 +93,10 @@ export default function Header() {
                 ✕
               </button>
 
-              {/* Globe */}
               <div className="w-full h-full relative z-0">
-                <GlobalSphere />
+                <Suspense fallback={<div className="text-center mt-20"><Loader/></div>}>
+                  <GlobalSphere />
+                </Suspense>
               </div>
             </_motion.div>
           </_motion.div>
