@@ -4,47 +4,66 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import earth from "../../assets/images/earth.png";
 import GlobalSphere from "../GlobalSphere/GlobalSphere";
-import './Header.css'
+import "./Header.css";
 
 export default function Header() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); 
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
     <>
       <div className="flex items-center md:flex-row md:justify-between sm:flex-col-reverse sm:text-center md:text-left">
-        {/* Caption */}
-        <div
+        {/* Caption with Framer Motion animation */}
+        <_motion.div
           className="caption mb-7 md:ms-40 w-40"
-          data-aos="fade-right" 
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          <h1 className="text-[#3E2723] font-bold text-5xl mx-auto my-2 leading-16">
+          <_motion.h1
+            className="text-[#3E2723] font-bold text-5xl mx-auto my-2 leading-16"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
             Discover Egypt’s Seasonal Blooms🌸
-          </h1>
-          <p className="text-[#3E2723] font-semibold mx-auto my-2">
-            Flowers tell the story of every season. Learn, explore, and play
-            your way through Egypt’s unique floral world.
-          </p>
-<div className="flex">
-            <button className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold">
-            Explore
-          </button>
-          <button className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold">
-            Let's Play
-          </button>
-</div>
-        </div>
+          </_motion.h1>
 
-        {/* Earth image */}
+          <_motion.p
+            className="text-[#3E2723] font-semibold mx-auto my-2"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            Flowers tell the story of every season. Learn, explore, and play your
+            way through Egypt’s unique floral world.
+          </_motion.p>
+
+          <_motion.div
+            className="flex"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <button className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold">
+              Explore
+            </button>
+            <button className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold">
+              Let's Play
+            </button>
+          </_motion.div>
+        </_motion.div>
+
+        {/* Earth image (still with AOS only) */}
         <img
           src={earth}
           className="w-80 sm:rotate-90 md:rotate-0 cursor-pointer"
           alt="earth"
           onClick={() => setShowModal(true)}
-          data-aos="zoom-in" // AOS effect
+          data-aos="zoom-in"
         />
       </div>
 
