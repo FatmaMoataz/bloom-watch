@@ -54,7 +54,7 @@ export default function Explore() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center mb-6 sm:gap-y-5 space-x-4">
+      <div className="flex flex-col md:flex-row items-center justify-center mb-6 space-y-1 text-center space-x-4">
         {tabs.map((tab) => (
           <button
             key={tab}

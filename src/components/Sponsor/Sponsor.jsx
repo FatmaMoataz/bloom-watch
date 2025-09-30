@@ -15,7 +15,7 @@ export default function Sponsor() {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 300,
+    autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,

@@ -1,6 +1,6 @@
 import Globe from "globe.gl";
-import * as THREE from "three";
 import { useEffect, useRef } from "react";
+import { AmbientLight, DirectionalLight } from "three"; 
 import "./GlobalSphere.css";
 
 export default function GlobalSphere() {
@@ -24,8 +24,9 @@ export default function GlobalSphere() {
       renderer.setClearColor(0x000000, 0);
       renderer.setClearAlpha(0);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      scene.add(new AmbientLight(0xffffff, 0.6));
+
+      const directionalLight = new DirectionalLight(0xffffff, 0.8);
       directionalLight.position.set(1, 1, 1);
       scene.add(directionalLight);
 
@@ -57,3 +58,4 @@ export default function GlobalSphere() {
 
   return <div ref={globeRef} className="w-full h-[500px] globe-container" />;
 }
+
