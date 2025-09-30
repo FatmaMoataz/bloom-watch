@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import earth from "../../assets/images/earth.png";
 import "./Header.css";
 import Loader from "../Loader/Loader";
+import { NavLink } from "react-router-dom";
 
 // Lazy load GlobalSphere
 const GlobalSphere = Suspense ? React.lazy(() => import("../GlobalSphere/GlobalSphere")) : null;
@@ -18,10 +19,10 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex items-center md:flex-row md:justify-between sm:flex-col-reverse sm:text-center md:text-left">
+      <div className="flex items-center sm:justify-center md:flex-row md:justify-between flex-col-reverse text-center md:text-left">
         {/* Caption */}
         <_motion.div
-          className="caption mb-7 md:ms-40 w-40"
+          className="caption mb-7 md:ms-40 md:w-4/12 sm:w-11/12"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -44,25 +45,33 @@ export default function Header() {
             Flowers tell the story of every season. Learn, explore, and play your way through Egypt’s unique floral world.
           </_motion.p>
 
-          <_motion.div
-            className="flex"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <button className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold">
-              Explore
-            </button>
-            <button className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold">
-              Let's Play
-            </button>
-          </_motion.div>
+        <_motion.div
+  className="flex flex-col md:flex-row"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1, duration: 0.8 }}
+>
+  <NavLink
+    to="/explore"
+    className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold text-center"
+  >
+    Explore
+  </NavLink>
+
+  <NavLink
+    to="/lets-play"
+    className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold text-center"
+  >
+    Let's Play
+  </NavLink>
+</_motion.div>
+
         </_motion.div>
 
         {/* Earth image */}
         <img
           src={earth}
-          className="w-80 sm:rotate-90 md:rotate-0 cursor-pointer"
+          className="md:w-80 w-70 sm:mx-auto md:mx-0 rotate-90 md:rotate-0 cursor-pointer"
           alt="earth"
           loading="lazy"
           onClick={() => setShowModal(true)}

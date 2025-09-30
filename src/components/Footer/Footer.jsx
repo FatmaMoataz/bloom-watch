@@ -6,12 +6,12 @@ export default function Footer() {
   return (
     <div className='bg-[#3E2723] p-8'>
 {/* Upper Part */}
-<div className='flex justify-between sm:flex-col md:flex-row sm:text-center md:text-left gap-6'>
-<div className="flex items-center gap-2 text-white w-72 mx-auto">
+<div className='flex justify-between flex-col md:flex-row text-center md:text-left gap-6'>
+<div className="flex items-center gap-2 text-white md:w-72 mx-auto">
   <img src={logo} alt="" />
 <p>A NASA Space Apps Challenge project bringing Egypt’s flowers to life.</p>
 </div>
-<div className="flex gap-9 sm:flex-col md:flex-row">
+<div className="flex gap-9 flex-col md:flex-row">
 
 <div>
   <h1 className="text-white font-semibold">Navigation</h1>

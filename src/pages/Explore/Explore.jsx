@@ -54,7 +54,7 @@ export default function Explore() {
         </div>
       </div>
 
-      <div className="flex justify-center mb-6 space-x-4">
+      <div className="flex flex-col md:flex-row items-center justify-center mb-6 sm:gap-y-5 space-x-4">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -70,7 +70,7 @@ export default function Explore() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-36 lg:grid-cols-4 gap-6 p-6">
+      <div className="grid grid-cols-1 w-9/12 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
         {seasonPlants.length > 0 ? (
           seasonPlants.map((plant, i) => (
             <_motion.div

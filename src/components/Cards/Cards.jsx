@@ -56,7 +56,7 @@ export default function Explore() {
       </p>
 
       {/* NavTabs */}
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-col md:flex-row items-center justify-center mb-6 space-y-1 text-center space-x-4">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -73,7 +73,7 @@ export default function Explore() {
       </div>
 
       {/* First 4 Plants */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 mx-24">
+      <div className="grid grid-cols-1 w-9/12 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
         {firstFour.map((plant, i) => (
           <_motion.div
             key={plant.id}
