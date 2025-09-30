@@ -11,7 +11,13 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Sponsor />
+      {/* <Sponsor /> */}
+      <Suspense fallback={<div><Loader/></div>}>
+        <div className='p-5'>
+         <Sponsor />
+        </div>
+      </Suspense>
+
 
       <Suspense fallback={<div><Loader/></div>}>
         <div className='bg-[#F0EFE791] p-5'>

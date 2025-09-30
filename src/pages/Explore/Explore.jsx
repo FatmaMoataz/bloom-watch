@@ -75,7 +75,7 @@ export default function Explore() {
           seasonPlants.map((plant, i) => (
             <_motion.div
               key={plant.id}
-              className="shadow-md rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
+              className="shadow-md bg-white rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
               data-aos="fade-up"
               whileHover={{ scale: 1.03 }}
               initial={{ opacity: 0, y: 50 }}

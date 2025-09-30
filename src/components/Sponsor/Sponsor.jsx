@@ -23,7 +23,8 @@ export default function Sponsor() {
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } },
       { breakpoint: 600, settings: { slidesToShow: 2, slidesToScroll: 2, initialSlide: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+      { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, infinite: true } }
+
     ]
   };
 
@@ -32,7 +33,7 @@ export default function Sponsor() {
   return (
     <div className="my-5">
       <h1 className="text-center my-5 text-3xl text-[#AA5868] font-semibold">Our Sponsors</h1>
-      <div className="slider-container mx-auto p-5">
+      <div className="slider-container mx-auto p-5 w-full">
         <Slider {...settings}>
           {sliders.map((src, idx) => (
             <div className="p-11" key={idx}>
