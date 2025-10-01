@@ -11,12 +11,8 @@ export default function Home() {
   return (
     <div>
       <Header />
-      {/* <Sponsor /> */}
-      <Suspense fallback={<div><Loader/></div>}>
-        <div className='p-5'>
+
          <Sponsor />
-        </div>
-      </Suspense>
 
 
       <Suspense fallback={<div><Loader/></div>}>
