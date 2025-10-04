@@ -16,13 +16,13 @@ export default function Home() {
 
 
       <Suspense fallback={<div><Loader/></div>}>
-        <div className='bg-[#F0EFE791] p-5'>
+        <div className='bg-[#F0EFE791] p-5' id="explore-section">
           <Cards />
         </div>
       </Suspense>
 
       <Suspense fallback={<div><Loader/></div>}>
-        <div className='p-5' data-aos="zoom-in">
+        <div className='p-5' data-aos="zoom-in" id="letsplay-section">
           <LetsPlay />
         </div>
       </Suspense>

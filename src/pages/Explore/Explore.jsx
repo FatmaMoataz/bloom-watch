@@ -49,7 +49,7 @@ export default function Explore() {
             placeholder="Type a flower name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A6A139]"
+            className="w-full pl-10 bg-white pr-4 py-2 border border-gray-300 rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A6A139]"
           />
         </div>
       </div>
@@ -95,11 +95,11 @@ export default function Explore() {
               <div className="flex flex-col flex-grow p-5">
                 <div className="flex justify-between items-center">
                   <h2 className="text-lg font-bold text-[#3E2723]">{plant.englishName}</h2>
-                  <h3 className="text-xs text-gray-500 mb-1">{plant.arabicName}</h3>
+                  <h3 className="text-lg font-bold text-[#3E2723] mb-1">{plant.arabicName}</h3>
                 </div>
-                <p className="text-xs text-gray-500 my-1">Scientific Name: {plant.scientificName}</p>
-                <p className="text-xs text-gray-500 my-1">Family: {plant.family}</p>
-                <p className="text-xs text-gray-600 mt-1 flex-grow">{plant.keyFeature}</p>              
+                <p className="text-sm text-[#E2758B] my-1"><span className="text-black/50">Scientific Name: </span>{plant.scientificName}</p>
+                <p className="text-sm text-[#E2758B] my-1"><span className="text-black/50">Family:</span> {plant.family}</p>
+                <p className="text-sm text-black/50 mt-4 flex-grow">{plant.keyFeature}</p>              
               </div>
             </_motion.div>
           ))

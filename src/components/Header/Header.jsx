@@ -7,7 +7,7 @@ import "./Header.css";
 import Loader from "../Loader/Loader";
 import { NavLink } from "react-router-dom";
 
-// Lazy load GlobalSphere
+
 const GlobalSphere = Suspense ? React.lazy(() => import("../GlobalSphere/GlobalSphere")) : null;
 
 export default function Header() {
@@ -51,19 +51,18 @@ export default function Header() {
   animate={{ opacity: 1 }}
   transition={{ delay: 1, duration: 0.8 }}
 >
-  <NavLink
-    to="/explore"
-    className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold text-center"
-  >
-    Explore
-  </NavLink>
-
-  <NavLink
-    to="/lets-play"
-    className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold text-center"
-  >
-    Let's Play
-  </NavLink>
+<button
+  onClick={() => document.getElementById('explore-section').scrollIntoView({ behavior: 'smooth' })}
+  className="px-5 py-2 cursor-pointer hover:bg-[#8d8711] transition-all rounded-3xl text-white bg-[#67620E] mt-3 me-4 font-semibold text-center"
+>
+  Explore
+</button>
+<button
+  onClick={() => document.getElementById('letsplay-section').scrollIntoView({ behavior: 'smooth' })}
+  className="px-5 py-2 hover:border-[#8d8711] hover:text-[#8d8711] cursor-pointer transition-all rounded-3xl text-[#67620E] border border-[#67620E] mt-3 font-semibold text-center"
+>
+  Let's Play
+</button>
 </_motion.div>
 
         </_motion.div>

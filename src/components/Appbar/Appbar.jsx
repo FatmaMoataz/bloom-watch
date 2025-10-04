@@ -8,9 +8,12 @@ export default function Appbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center p-2 bg-[rgba(255,255,255,0.99)]">
+    <div className="flex text-lg justify-between items-center p-2 bg-[rgba(255,255,255,0.99)]">
 
-      <img src={logo} alt="BloomSphere" className="w-28" />
+     <NavLink to="/">
+  <img src={logo} alt="BloomSphere" className="w-28 cursor-pointer" />
+</NavLink>
+
 
       {/* Navigation hidden on mobile */}
       <ul className="hidden md:flex space-x-6">
@@ -58,7 +61,7 @@ export default function Appbar() {
 
       {/* Hamburger button (only mobile) */}
       <button
-        className="md:hidden text-2xl text-[#E2758B]"
+        className="md:hidden text-2xl text-[#E2758B] cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <FiX /> : <FiMenu />}
@@ -66,7 +69,7 @@ export default function Appbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-28 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-4 py-6 md:hidden z-50">
+        <div className="absolute top-28 left-0 w-full cursor-pointer bg-white shadow-lg flex flex-col items-center gap-4 py-6 md:hidden z-50">
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
@@ -96,10 +99,10 @@ export default function Appbar() {
           </NavLink>
 
           <div className="flex gap-2">
-            <button className="text-white bg-[#E2758B] px-3 py-2 rounded-xl">
+            <button className="text-white bg-[#E2758B] px-3 py-2 rounded-xl cursor-pointer">
               Login
             </button>
-            <button className="text-[#E2758B] px-3 py-2 rounded-xl">
+            <button className="text-[#E2758B] px-3 py-2 rounded-xl cursor-pointer">
               Sign Up
             </button>
           </div>

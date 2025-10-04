@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { motion as _motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import './Cards.css';
+import { FiX } from "react-icons/fi";
 
 export default function Explore() {
   const [plants, setPlants] = useState([]);
@@ -96,16 +97,11 @@ export default function Explore() {
             )}
 
             <div className="flex flex-col flex-grow p-5">
-              <div className="flex justify-between items-center">
                 <h2 className="text-lg font-bold text-[#3E2723]">
                   {plant.englishName}
                 </h2>
-                <h3 className="text-xs text-gray-500 mb-1">
-                  {plant.arabicName}
-                </h3>
-              </div>
-              <p className="text-xs text-gray-600 mt-1 flex-grow">
-                {plant.keyFeature}
+              <p className="text-sm text-black/50 nmt-1 flex-grow">
+                {plant.keyFeature.split(" ").slice(0, 10).join(" ")}...
               </p>
               <button
                 className='text-[#E2758B] cursor-pointer hover:text-[#884653] underline my-1 text-left'
@@ -120,62 +116,62 @@ export default function Explore() {
 
       {/* Modal */}
       {isModalOpen && selectedPlant && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <_motion.div
-            className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto flex flex-col"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Image Section */}
-            {selectedPlant.image && (
-              <div className="w-full h-52 bg-[#FBEAEE] flex items-center justify-center">
-                <img
-                  src={selectedPlant.image}
-                  alt={selectedPlant.englishName}
-                  className="max-h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            )}
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+     <_motion.div
+  className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto flex flex-col relative"
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.9 }}
+  transition={{ duration: 0.3 }}
+>
+  {/* Close Icon */}
+  <button
+    onClick={closeModal}
+    className="absolute top-3 right-3 text-gray-600 bg-[#F6D4DB] cursor-pointer rounded-md p-0.5 hover:text-[#E2758B] transition"
+  >
+    <FiX size={22} />
+  </button>
 
-            {/* Content Section */}
-            <div className="flex flex-col flex-grow p-5">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-bold text-[#3E2723]">
-                  {selectedPlant.englishName}
-                </h2>
-                <h3 className="text-xs text-gray-500">
-                  {selectedPlant.arabicName}
-                </h3>
-              </div>
+  {/* Image Section */}
+  {selectedPlant.image && (
+    <div className="w-full h-52 bg-[#FBEAEE] flex items-center justify-center">
+      <img
+        src={selectedPlant.image}
+        alt={selectedPlant.englishName}
+        className="max-h-full object-contain"
+        loading="lazy"
+      />
+    </div>
+  )}
 
-              <div className="space-y-2">
-                <p className="text-xs text-gray-500">
-                  <span className="font-semibold">Scientific Name:</span> {selectedPlant.scientificName}
-                </p>
-                <p className="text-xs text-gray-500">
-                  <span className="font-semibold">Family:</span> {selectedPlant.family}
-                </p>
-                <p className="text-xs text-gray-500">
-                  <span className="font-semibold">Bloom Season:</span> {selectedPlant.bloomSeason}
-                </p>
-                <p className="text-xs text-gray-600 mt-3">
-                  <span className="font-semibold text-[#3E2723]">Key Feature:</span> {selectedPlant.keyFeature}
-                </p>
-              </div>
+  {/* Content Section */}
+  <div className="flex flex-col flex-grow px-5 py-7">
+    <div className="flex justify-between items-center mb-4">
+      <h2 className="text-lg font-bold text-[#3E2723]">
+        {selectedPlant.englishName}
+      </h2>
+      <h3 className="text-lg font-bold text-[#3E2723]">
+        {selectedPlant.arabicName}
+      </h3>
+    </div>
 
-              <div className="mt-6 flex justify-end">
-                <button
-                  onClick={closeModal}
-                  className="px-4 py-2 cursor-pointer bg-[#E2758B] text-white text-xs rounded hover:bg-[#884653] transition"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </_motion.div>
+    <div className="space-y-2">
+      <p className="text-[#E2758B]">
+        <span className="text-black/50">Scientific Name:</span> {selectedPlant.scientificName}
+      </p>
+      <p className="text-[#E2758B]">
+        <span className="text-black/50">Family:</span> {selectedPlant.family}
+      </p>
+      <p className="text-[#E2758B]">
+        <span className="text-black/50">Season:</span> {selectedPlant.bloomSeason}
+      </p>
+      <p className="text-[#E2758B]">
+        <span className="text-black/50">Description:</span> {selectedPlant.keyFeature}
+      </p>
+    </div>
+  </div>
+</_motion.div>
+          
         </div>
       )}
 
