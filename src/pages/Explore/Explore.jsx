@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion as _motion } from "framer-motion";
 import { FiSearch } from "react-icons/fi"; 
+import Loader from "../../components/Loader/Loader";
 import './Explore.css'
+
+const Cards = lazy(() => import('../../components/Cards/Cards'));
 
 export default function Explore() {
   const [plants, setPlants] = useState([]);
@@ -11,25 +13,28 @@ export default function Explore() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("/plants.json")
-      .then((res) => res.json())
-      .then((data) => setPlants(data.plants));
+    const loadPlants = async () => {
+      try {
+        const response = await fetch("/plants.json");
+        const data = await response.json();
+        setPlants(data.plants);
+      } catch (error) {
+        console.error("Failed to load plants:", error);
+      }
+    };
 
+    loadPlants();
     AOS.init({ duration: 800, offset: 100, once: true });
   }, []);
 
   const tabs = ["All", "Spring", "Summer", "Winter", "Autumn"];
 
-  const seasonPlants = plants.filter((p) => {
-    const matchesSeason =
-      season === "All" ||
-      p.bloomSeason.toLowerCase().includes(season.toLowerCase());
-
+  const filteredPlants = plants.filter((p) => {
     const matchesSearch =
       p.englishName.toLowerCase().includes(search.toLowerCase()) ||
-      p.arabicName.toLowerCase().includes(search.toLowerCase());
-
-    return matchesSeason && matchesSearch;
+      p.arabicName.toLowerCase().includes(search.toLowerCase()) ||
+      p.scientificName.toLowerCase().includes(search.toLowerCase());
+    return matchesSearch;
   });
 
   return (
@@ -38,7 +43,7 @@ export default function Explore() {
         Explore Egypt's Blooming Seasons
       </h1>
       <p className="text-center my-3 font-semibold text-[#3E2723]">
-        Select a season or search for a flower to explore Egypt’s blooms.
+        Select a season or search for a flower to explore Egypt's blooms.
       </p>
 
       <div className="flex justify-center mb-6">
@@ -70,45 +75,17 @@ export default function Explore() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 w-9/12 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {seasonPlants.length > 0 ? (
-          seasonPlants.map((plant, i) => (
-            <_motion.div
-              key={plant.id}
-              className="shadow-md bg-white rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
-              data-aos="fade-up"
-              whileHover={{ scale: 1.03 }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-            >
-              {plant.image && (
-                <div className="w-full h-52 bg-[#FBEAEE] flex items-center justify-center">
-                  <img
-                    src={plant.image}
-                    alt={plant.englishName}
-                    className="max-h-full object-contain"
-                  />
-                </div>
-              )}
-
-              <div className="flex flex-col flex-grow p-5">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-lg font-bold text-[#3E2723]">{plant.englishName}</h2>
-                  <h3 className="text-lg font-bold text-[#3E2723] mb-1">{plant.arabicName}</h3>
-                </div>
-                <p className="text-sm text-[#E2758B] my-1"><span className="text-black/50">Scientific Name: </span>{plant.scientificName}</p>
-                <p className="text-sm text-[#E2758B] my-1"><span className="text-black/50">Family:</span> {plant.family}</p>
-                <p className="text-sm text-black/50 mt-4 flex-grow">{plant.keyFeature}</p>              
-              </div>
-            </_motion.div>
-          ))
-        ) : (
-          <p className="col-span-full text-center text-gray-500 text-lg">
-            No plants found matching your search 🌱
-          </p>
-        )}
-      </div>
+      <Suspense fallback={
+        <div className="flex justify-center items-center h-64">
+          <Loader />
+        </div>
+      }>
+        <Cards 
+          plants={filteredPlants}
+          season={season}
+          showAll={true}
+        />
+      </Suspense>
     </>
   );
 }
