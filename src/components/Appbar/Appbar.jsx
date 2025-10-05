@@ -234,7 +234,7 @@ export default function Appbar() {
         </div>
 
         {!user && (
-          <button className="text-[#E2758B] px-4 py-2 cursor-pointer hover:text-[#e0657d] rounded-xl border border-[#E2758B] hover:border-[#e0657d] transition-colors">
+          <button className="text-[#E2758B] px-4 py-2 cursor-pointer hover:text-[#e0657d] rounded-xl transition-colors">
             Sign Up
           </button>
         )}
@@ -337,7 +337,7 @@ export default function Appbar() {
                     </button>
                   </div>
                 </div>
-                <button className="text-[#E2758F] px-4 py-3 rounded-xl cursor-pointer hover:text-[#e0657d] border border-[#E2758F] hover:border-[#e0657d] transition-colors">
+                <button className="text-[#E2758F] px-4 py-3 rounded-xl cursor-pointer hover:text-[#e0657d] transition-colors">
                   Sign Up
                 </button>
               </>
