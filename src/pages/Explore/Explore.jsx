@@ -1,7 +1,7 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FiSearch } from "react-icons/fi"; 
+import { FiSearch, FiExternalLink } from "react-icons/fi"; 
 import Loader from "../../components/Loader/Loader";
 import './Explore.css'
 
@@ -37,8 +37,26 @@ export default function Explore() {
     return matchesSearch;
   });
 
+  const handleHuggingFaceClick = () => {
+    window.open("https://huggingface.co/spaces/mariamomran/Nasa_Flower_Prediction", "_blank");
+  };
+
   return (
     <>
+
+      <button
+        onClick={handleHuggingFaceClick}
+        className="fixed right-6 bottom-6 z-40 bg-[#A6A139] text-white cursor-pointer rounded-full p-4 shadow-lg hover:bg-[#8a852e] transition-all flex items-center gap-2 group"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
+        <FiExternalLink size={20} />
+        <span className="hidden sm:inline whitespace-nowrap">NASA Flower Prediction</span>
+        <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block bg-gray-800 text-white text-sm rounded py-1 px-2 whitespace-nowrap">
+          AI Flower Identification
+        </div>
+      </button>
+
       <h1 className="text-5xl text-center my-5 font-bold text-[#3E2723]">
         Explore Egypt's Blooming Seasons
       </h1>
